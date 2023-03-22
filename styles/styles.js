@@ -11,6 +11,9 @@ export const colors = {
   color6: "#f7f7f7",
 };
 
+//sometimes i have used this style to create and sometimes i haven't used anything.So what's the meaning of this
+// is nothing,it's just that using a stylesheet.create method will give me a suggeston that i can use 
+// verticalmargin. here (whithout stylesshet) i have to write everything on my own.
 export const defaultStyle = StyleSheet.create({
   padding: 35,
   paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
@@ -23,4 +26,61 @@ export const inputStyling = StyleSheet.create({
   backgroundColor: colors.color2,
   marginVertical: 10,
   marginHorizontal: 20,
+});
+
+export const formHeading = {
+  fontSize: 25,
+  fontWeight: "500",
+  textAlign: "center",
+  backgroundColor: colors.color3,
+  color: colors.color2,
+  padding: 5,
+  borderRadius: 5,
+};
+
+export const inputOptions = {
+  style: inputStyling,
+  mode: "outlined",
+  activeOutlineColor: colors.color1,
+};
+
+export const formStyles = StyleSheet.create({
+  container: {
+  flex: 1,
+  padding: 20,
+  backgroundColor: colors.color3,
+  borderRadius: 10,
+  justifyContent: "center",
+  elevation: 10,
+},
+
+forget: {
+  color: colors.color2,
+  marginHorizontal: 20,
+  marginVertical: 10,
+  alignSelf: "flex-end",
+  fontWeight: "100",
+},
+
+btn: {
+  backgroundColor: colors.color1,
+  margin: 20,
+  padding: 6,
+},
+
+or: {
+  alignSelf: "center",
+  fontSize: 20,
+  fontWeight: "100",
+  color: colors.color2,
+},
+
+link: {
+  alignSelf: "center",
+  color: colors.color2,
+  fontSize: 18,
+  textTransform: "uppercase",
+  marginVertical: 10,
+  marginHorizontal: 20,
+},
 });

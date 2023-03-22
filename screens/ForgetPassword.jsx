@@ -1,18 +1,18 @@
-import { View, Text,TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { colors, defaultStyle, formHeading, inputOptions,formStyles as styles} from "../styles/styles";
+import { colors, defaultStyle, formHeading, inputOptions,formStyles as styles } from "../styles/styles";
 import { Button, TextInput } from "react-native-paper";
 import Footer from "../components/Footer";
 
-const Login = ({ navigation }) => {
+const ForgetPassword= ({ navigation }) => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const loading = false;
+ const loading = false;
 
   const submitHandler = () => {
     alert("yeah");
-   
+     //will remove this in future
+     navigation.navigate("verify");
   };
   return (
     <>
@@ -20,10 +20,12 @@ const Login = ({ navigation }) => {
         {/* Heading */}
 
         <View style={{ marginBottom: 20 }}>
-          <Text style={formHeading}>Login</Text>
+          <Text style={formHeading}>Forget Password</Text>
         </View>
         {/* container */}
         <View style={styles.container}>
+
+            {/* this is for the email input */}
           <TextInput
             {...inputOptions}
             placeholder="Email"
@@ -31,39 +33,29 @@ const Login = ({ navigation }) => {
             value={email}
             onChangeText={setEmail}
           />
-          <TextInput
-            {...inputOptions}
-            placeholder="Password"
-            //this is what this will do,if i type in the bottom,you will see we will have start
-            secureTextEntry={true}
-            value={password}
-            onChangeText={setPassword}
-          />
-
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => navigation.navigate("forgetpassword")}
-          >
-            <Text style={styles.forget}>Forget Password</Text>
-          </TouchableOpacity>
-
+          
+          {/* this is for the send OTP */}
           <Button
             //so we will use this while fetching with backend to make sure that no one do multiple requests at a time.
             loading={loading}
             //email and password empty hone pr login button disable ho jaega
-            disabled={email === " " || password === ""}
+            disabled={email === " "}
             textColor={colors.color2}
             style={styles.btn}
             onPress={submitHandler}
           >
-            Log In
+            Send OTP
           </Button>
+
+          {/* this is for OR */}
           <Text style={styles.or}>OR</Text>
+
+          {/* This is for login */}
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate("signup")}
+            onPress={() => navigation.navigate("login")}
           >
-            <Text style={styles.link}>Sign Up</Text>
+            <Text style={styles.link}>Log In</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -75,4 +67,4 @@ const Login = ({ navigation }) => {
 };
 
 
-export default Login;
+export default ForgetPassword;
