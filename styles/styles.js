@@ -84,3 +84,5 @@ link: {
   marginHorizontal: 20,
 },
 });
+
+export const defaultImg = "https://media.istockphoto.com/id/871752462/vector/default-gray-placeholder-man.jpg?s=612x612&w=0&k=20&c=4aUt99MQYO4dyo-rPImH2kszYe1EcuROC6f2iMQmn8o=";

@@ -12,8 +12,7 @@ const Login = ({ navigation }) => {
 
   const submitHandler = () => {
     alert("yeah");
-   
-  };
+   };
   return (
     <>
       <View style={{...defaultStyle,backgroundColor:colors.color2}} >

@@ -11,6 +11,9 @@ import Payment from "./screens/Payment";
 import Login from "./screens/Login";
 import ForgetPassword from "./screens/ForgetPassword";
 import Verify from "./screens/Verify";
+import SignUp from "./screens/SignUp";
+import Profile from "./screens/Profile";
+import UpdateProfile from "./screens/UpdateProfile";
 
 const Stack = createNativeStackNavigator();
 const Main = () => {
@@ -24,7 +27,10 @@ const Main = () => {
           <Stack.Screen name="confirmorder" component={ConfirmOrder} />
           <Stack.Screen name="payment" component={Payment} />
           <Stack.Screen name="login" component={Login} />
-          
+          <Stack.Screen name="signup" component={SignUp} />
+          <Stack.Screen name="profile" component={Profile} />
+          <Stack.Screen name="updateprofile" component={UpdateProfile} />
+
           {/* Password Reseting Route */}
           <Stack.Screen name="forgetpassword" component={ForgetPassword} />
           <Stack.Screen name="verify" component={Verify} />
